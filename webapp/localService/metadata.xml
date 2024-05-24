@@ -1,0 +1,295 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="bd4e2c300cac18b01b051847" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="bd4e2c300cac18b01b051847_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="EmpresaSet" EntityType="bd4e2c300cac18b01b051847.Empresa" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="EmpresaCampaniasCampania" Association="bd4e2c300cac18b01b051847.EmpresaCampaniasCampania" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="EmpresaSet" Role="FromRole_EmpresaCampaniasCampania"/>
+                    <End EntitySet="CampaniaSet" Role="ToRole_EmpresaCampaniasCampania"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpresaStakeHoldersStakeHolder" Association="bd4e2c300cac18b01b051847.EmpresaStakeHoldersStakeHolder" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="EmpresaSet" Role="FromRole_EmpresaStakeHoldersStakeHolder"/>
+                    <End EntitySet="StakeHolderSet" Role="ToRole_EmpresaStakeHoldersStakeHolder"/>
+                </AssociationSet>
+                <EntitySet Name="CampaniaSet" EntityType="bd4e2c300cac18b01b051847.Campania" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="CampaniaMensajesMensaje" Association="bd4e2c300cac18b01b051847.CampaniaMensajesMensaje" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CampaniaSet" Role="FromRole_CampaniaMensajesMensaje"/>
+                    <End EntitySet="MensajeSet" Role="ToRole_CampaniaMensajesMensaje"/>
+                </AssociationSet>
+                <AssociationSet Name="CampaniaHitosHito" Association="bd4e2c300cac18b01b051847.CampaniaHitosHito" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CampaniaSet" Role="FromRole_CampaniaHitosHito"/>
+                    <End EntitySet="HitoSet" Role="ToRole_CampaniaHitosHito"/>
+                </AssociationSet>
+                <AssociationSet Name="CampaniaArchivosArchivo" Association="bd4e2c300cac18b01b051847.CampaniaArchivosArchivo" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CampaniaSet" Role="FromRole_CampaniaArchivosArchivo"/>
+                    <End EntitySet="ArchivoSet" Role="ToRole_CampaniaArchivosArchivo"/>
+                </AssociationSet>
+                <AssociationSet Name="CampaniaEmpresaEmpresa" Association="bd4e2c300cac18b01b051847.CampaniaEmpresaEmpresa" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CampaniaSet" Role="FromRole_CampaniaEmpresaEmpresa"/>
+                    <End EntitySet="EmpresaSet" Role="ToRole_CampaniaEmpresaEmpresa"/>
+                </AssociationSet>
+                <EntitySet Name="StakeHolderSet" EntityType="bd4e2c300cac18b01b051847.StakeHolder" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="StakeHolderMensajesDirectosMensaje" Association="bd4e2c300cac18b01b051847.StakeHolderMensajesDirectosMensaje" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="StakeHolderSet" Role="FromRole_StakeHolderMensajesDirectosMensaje"/>
+                    <End EntitySet="MensajeSet" Role="ToRole_StakeHolderMensajesDirectosMensaje"/>
+                </AssociationSet>
+                <EntitySet Name="ArchivoSet" EntityType="bd4e2c300cac18b01b051847.Archivo" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ArchivoRelationNameCampania" Association="bd4e2c300cac18b01b051847.ArchivoRelationNameCampania" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ArchivoSet" Role="FromRole_ArchivoRelationNameCampania"/>
+                    <End EntitySet="CampaniaSet" Role="ToRole_ArchivoRelationNameCampania"/>
+                </AssociationSet>
+                <EntitySet Name="HitoSet" EntityType="bd4e2c300cac18b01b051847.Hito" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="HitoCampaniaCampania" Association="bd4e2c300cac18b01b051847.HitoCampaniaCampania" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="HitoSet" Role="FromRole_HitoCampaniaCampania"/>
+                    <End EntitySet="CampaniaSet" Role="ToRole_HitoCampaniaCampania"/>
+                </AssociationSet>
+                <AssociationSet Name="HitoRelationNameEmpresa" Association="bd4e2c300cac18b01b051847.HitoRelationNameEmpresa" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="HitoSet" Role="FromRole_HitoRelationNameEmpresa"/>
+                    <End EntitySet="EmpresaSet" Role="ToRole_HitoRelationNameEmpresa"/>
+                </AssociationSet>
+                <AssociationSet Name="HitoRelationName1Notas" Association="bd4e2c300cac18b01b051847.HitoRelationName1Notas" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="HitoSet" Role="FromRole_HitoRelationName1Notas"/>
+                    <End EntitySet="NotasSet" Role="ToRole_HitoRelationName1Notas"/>
+                </AssociationSet>
+                <EntitySet Name="MensajeSet" EntityType="bd4e2c300cac18b01b051847.Mensaje" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="MensajeSenderStakeHolder" Association="bd4e2c300cac18b01b051847.MensajeSenderStakeHolder" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="MensajeSet" Role="FromRole_MensajeSenderStakeHolder"/>
+                    <End EntitySet="StakeHolderSet" Role="ToRole_MensajeSenderStakeHolder"/>
+                </AssociationSet>
+                <EntitySet Name="NotasSet" EntityType="bd4e2c300cac18b01b051847.Notas" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="Empresa">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Logo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Logo"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="Categoria" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Categoria"/>
+                <Property Name="Activa" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Activa"/>
+                <Property Name="ActiveState" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ActiveState"/>
+                <NavigationProperty Name="Campanias" Relationship="bd4e2c300cac18b01b051847.EmpresaCampaniasCampania" FromRole="FromRole_EmpresaCampaniasCampania" ToRole="ToRole_EmpresaCampaniasCampania"/>
+                <NavigationProperty Name="StakeHolders" Relationship="bd4e2c300cac18b01b051847.EmpresaStakeHoldersStakeHolder" FromRole="FromRole_EmpresaStakeHoldersStakeHolder" ToRole="ToRole_EmpresaStakeHoldersStakeHolder"/>
+            </EntityType>
+            <Association Name="EmpresaCampaniasCampania">
+                <End Type="bd4e2c300cac18b01b051847.Empresa" Multiplicity="1" Role="FromRole_EmpresaCampaniasCampania"/>
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="*" Role="ToRole_EmpresaCampaniasCampania"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpresaCampaniasCampania">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpresaCampaniasCampania">
+                        <PropertyRef Name="___FK_9c3b7b65c32a9a291b052de0_00005"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpresaStakeHoldersStakeHolder">
+                <End Type="bd4e2c300cac18b01b051847.Empresa" Multiplicity="1" Role="FromRole_EmpresaStakeHoldersStakeHolder"/>
+                <End Type="bd4e2c300cac18b01b051847.StakeHolder" Multiplicity="*" Role="ToRole_EmpresaStakeHoldersStakeHolder"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpresaStakeHoldersStakeHolder">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpresaStakeHoldersStakeHolder">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00004"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Campania">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="Estado" Type="Edm.Boolean" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Estado"/>
+                <Property Name="___FK_9c3b7b65c32a9a291b052de0_00005" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_9c3b7b65c32a9a291b052de0_00005"/>
+                <Property Name="iconState" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Campania\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Estado\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Boolean\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;boolean\&quot;,\&quot;entityName\&quot;:\&quot;Campania\&quot;,\&quot;propertyName\&quot;:\&quot;Estado\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;unlocked\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;locked\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;string\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Campania&quot;,&quot;propertyId&quot;:&quot;Estado&quot;}]}" sap:label="iconState"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00025" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00025"/>
+                <NavigationProperty Name="Mensajes" Relationship="bd4e2c300cac18b01b051847.CampaniaMensajesMensaje" FromRole="FromRole_CampaniaMensajesMensaje" ToRole="ToRole_CampaniaMensajesMensaje"/>
+                <NavigationProperty Name="Hitos" Relationship="bd4e2c300cac18b01b051847.CampaniaHitosHito" FromRole="FromRole_CampaniaHitosHito" ToRole="ToRole_CampaniaHitosHito"/>
+                <NavigationProperty Name="Archivos" Relationship="bd4e2c300cac18b01b051847.CampaniaArchivosArchivo" FromRole="FromRole_CampaniaArchivosArchivo" ToRole="ToRole_CampaniaArchivosArchivo"/>
+                <NavigationProperty Name="Empresa" Relationship="bd4e2c300cac18b01b051847.CampaniaEmpresaEmpresa" FromRole="FromRole_CampaniaEmpresaEmpresa" ToRole="ToRole_CampaniaEmpresaEmpresa"/>
+            </EntityType>
+            <Association Name="CampaniaMensajesMensaje">
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="FromRole_CampaniaMensajesMensaje"/>
+                <End Type="bd4e2c300cac18b01b051847.Mensaje" Multiplicity="*" Role="ToRole_CampaniaMensajesMensaje"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CampaniaMensajesMensaje">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CampaniaMensajesMensaje">
+                        <PropertyRef Name="___FK_9c3b7b65c32a9a291b052de0_00011"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CampaniaHitosHito">
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="FromRole_CampaniaHitosHito"/>
+                <End Type="bd4e2c300cac18b01b051847.Hito" Multiplicity="*" Role="ToRole_CampaniaHitosHito"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CampaniaHitosHito">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CampaniaHitosHito">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00008"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CampaniaArchivosArchivo">
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="FromRole_CampaniaArchivosArchivo"/>
+                <End Type="bd4e2c300cac18b01b051847.Archivo" Multiplicity="*" Role="ToRole_CampaniaArchivosArchivo"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CampaniaArchivosArchivo">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CampaniaArchivosArchivo">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00012"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CampaniaEmpresaEmpresa">
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="FromRole_CampaniaEmpresaEmpresa"/>
+                <End Type="bd4e2c300cac18b01b051847.Empresa" Multiplicity="1" Role="ToRole_CampaniaEmpresaEmpresa"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_CampaniaEmpresaEmpresa">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_CampaniaEmpresaEmpresa">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00025"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="StakeHolder">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00004" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00004"/>
+                <NavigationProperty Name="MensajesDirectos" Relationship="bd4e2c300cac18b01b051847.StakeHolderMensajesDirectosMensaje" FromRole="FromRole_StakeHolderMensajesDirectosMensaje" ToRole="ToRole_StakeHolderMensajesDirectosMensaje"/>
+            </EntityType>
+            <Association Name="StakeHolderMensajesDirectosMensaje">
+                <End Type="bd4e2c300cac18b01b051847.StakeHolder" Multiplicity="1" Role="FromRole_StakeHolderMensajesDirectosMensaje"/>
+                <End Type="bd4e2c300cac18b01b051847.Mensaje" Multiplicity="*" Role="ToRole_StakeHolderMensajesDirectosMensaje"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_StakeHolderMensajesDirectosMensaje">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_StakeHolderMensajesDirectosMensaje">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00016"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Archivo">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="FechaCreacion" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="FechaCreacion"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00012" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00012"/>
+                <Property Name="AutorContenido" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AutorContenido"/>
+                <Property Name="___FK_e776c27e4902bbcd1b1176ce_00003" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_e776c27e4902bbcd1b1176ce_00003"/>
+                <NavigationProperty Name="RelationName" Relationship="bd4e2c300cac18b01b051847.ArchivoRelationNameCampania" FromRole="FromRole_ArchivoRelationNameCampania" ToRole="ToRole_ArchivoRelationNameCampania"/>
+            </EntityType>
+            <Association Name="ArchivoRelationNameCampania">
+                <End Type="bd4e2c300cac18b01b051847.Archivo" Multiplicity="1" Role="FromRole_ArchivoRelationNameCampania"/>
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="ToRole_ArchivoRelationNameCampania"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_ArchivoRelationNameCampania">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_ArchivoRelationNameCampania">
+                        <PropertyRef Name="___FK_e776c27e4902bbcd1b1176ce_00003"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Hito">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="Descripcion" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Descripcion"/>
+                <Property Name="Fecha" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="Fecha"/>
+                <Property Name="Estado" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Estado"/>
+                <Property Name="stateStado" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Hito\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;Estado\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;String\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;string\&quot;,\&quot;entityName\&quot;:\&quot;Hito\&quot;,\&quot;propertyName\&quot;:\&quot;Estado\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Completado\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;displayLabel\&quot;:\&quot;=\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;boolean\&quot;}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Positive\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Critical\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:6,\&quot;computedType\&quot;:\&quot;string\&quot;}],\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;string\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Hito&quot;,&quot;propertyId&quot;:&quot;Estado&quot;}]}" sap:label="stateStado"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00008" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00008"/>
+                <Property Name="___FK_a0c76601d336df211b055009_00003" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_a0c76601d336df211b055009_00003"/>
+                <Property Name="___FK_a0c76601d336df211b055009_00005" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_a0c76601d336df211b055009_00005"/>
+                <Property Name="hora" Type="Edm.Time" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="hora"/>
+                <Property Name="url" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="url"/>
+                <Property Name="___FK_5bc2787daffe75531b059e93_00008" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_5bc2787daffe75531b059e93_00008"/>
+                <NavigationProperty Name="Campania" Relationship="bd4e2c300cac18b01b051847.HitoCampaniaCampania" FromRole="FromRole_HitoCampaniaCampania" ToRole="ToRole_HitoCampaniaCampania"/>
+                <NavigationProperty Name="RelationName" Relationship="bd4e2c300cac18b01b051847.HitoRelationNameEmpresa" FromRole="FromRole_HitoRelationNameEmpresa" ToRole="ToRole_HitoRelationNameEmpresa"/>
+                <NavigationProperty Name="RelationName1" Relationship="bd4e2c300cac18b01b051847.HitoRelationName1Notas" FromRole="FromRole_HitoRelationName1Notas" ToRole="ToRole_HitoRelationName1Notas"/>
+            </EntityType>
+            <Association Name="HitoCampaniaCampania">
+                <End Type="bd4e2c300cac18b01b051847.Hito" Multiplicity="1" Role="FromRole_HitoCampaniaCampania"/>
+                <End Type="bd4e2c300cac18b01b051847.Campania" Multiplicity="1" Role="ToRole_HitoCampaniaCampania"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_HitoCampaniaCampania">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_HitoCampaniaCampania">
+                        <PropertyRef Name="___FK_a0c76601d336df211b055009_00003"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HitoRelationNameEmpresa">
+                <End Type="bd4e2c300cac18b01b051847.Hito" Multiplicity="1" Role="FromRole_HitoRelationNameEmpresa"/>
+                <End Type="bd4e2c300cac18b01b051847.Empresa" Multiplicity="1" Role="ToRole_HitoRelationNameEmpresa"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_HitoRelationNameEmpresa">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_HitoRelationNameEmpresa">
+                        <PropertyRef Name="___FK_a0c76601d336df211b055009_00005"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="HitoRelationName1Notas">
+                <End Type="bd4e2c300cac18b01b051847.Hito" Multiplicity="1" Role="FromRole_HitoRelationName1Notas"/>
+                <End Type="bd4e2c300cac18b01b051847.Notas" Multiplicity="1" Role="ToRole_HitoRelationName1Notas"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_HitoRelationName1Notas">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_HitoRelationName1Notas">
+                        <PropertyRef Name="___FK_5bc2787daffe75531b059e93_00008"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Mensaje">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Fecha" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="fecha"/>
+                <Property Name="Content" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="content"/>
+                <Property Name="___FK_9c3b7b65c32a9a291b052de0_00011" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_9c3b7b65c32a9a291b052de0_00011"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00016" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00016"/>
+                <Property Name="___FK_0972231ebe507bd01b0530ee_00031" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_0972231ebe507bd01b0530ee_00031"/>
+                <NavigationProperty Name="Sender" Relationship="bd4e2c300cac18b01b051847.MensajeSenderStakeHolder" FromRole="FromRole_MensajeSenderStakeHolder" ToRole="ToRole_MensajeSenderStakeHolder"/>
+            </EntityType>
+            <Association Name="MensajeSenderStakeHolder">
+                <End Type="bd4e2c300cac18b01b051847.Mensaje" Multiplicity="1" Role="FromRole_MensajeSenderStakeHolder"/>
+                <End Type="bd4e2c300cac18b01b051847.StakeHolder" Multiplicity="1" Role="ToRole_MensajeSenderStakeHolder"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_MensajeSenderStakeHolder">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_MensajeSenderStakeHolder">
+                        <PropertyRef Name="___FK_0972231ebe507bd01b0530ee_00031"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Notas">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Content" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Content"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

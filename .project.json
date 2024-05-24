@@ -1,0 +1,37 @@
+{
+    "dataBinding": {
+        "/webapp/view/CrearCampana.view.xml": {
+            "entitySet": "/CampaniaSet"
+        }, 
+        "/webapp/view/CrearArchivo.view.xml": {
+            "entitySet": "/ArchivoSet"
+        }, 
+        "/webapp/view/CrearHito.view.xml": {
+            "entitySet": "/HitoSet"
+        }, 
+        "/webapp/view/ArchivosDeCampana.view.xml": {
+            "entitySet": "/CampaniaSet"
+        }, 
+        "/webapp/view/HitosDeCampana.view.xml": {
+            "entitySet": "/CampaniaSet"
+        }, 
+        "/webapp/view/DetalleDeHito.view.xml": {
+            "entitySet": "/HitoSet"
+        }, 
+        "/webapp/view/MensajeDirecto.view.xml": {
+            "entitySet": "/StakeHolderSet"
+        }, 
+        "/webapp/view/DetalleDeCampana.view.xml": {
+            "entitySet": "/CampaniaSet"
+        }, 
+        "/webapp/view/PaginaDeEmpresa.view.xml": {
+            "entitySet": "/EmpresaSet"
+        }, 
+        "/webapp/view/Principal.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Popover1.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}

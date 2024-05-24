@@ -1,0 +1,107 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.entregaSisemp.controller.HitosDeCampana" xmlns:uxap="sap.uxap" xmlns="sap.m">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Nombre}" objectSubtitle="Hitos" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="{Empresa/Nombre}"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Salir" iconFirst="true" type="Back" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Hitos">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Hitos">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" itemPress="_onFioriObjectPageTableItemPress" items="{path:'Hitos', templateShareable:true}">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button text="Eliminar" iconFirst="false" type="Transparent" press="_onFioriObjectPageTableActionPress">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Hito"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Descripción"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Fecha"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Title" width="auto"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                        <cells>
+                                            <Text text="{Nombre}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{Descripcion}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{path: 'Fecha', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'short' }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <ObjectStatus text="{Estado}" state="{path:'stateStado', formatter:'.formatStateFromCriticality'}" icon="{path:'stateStado', formatter:'.formatIconFromCriticality'}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Crear Hito">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Crear Hito">
+                        <uxap:blocks>
+                            <Button text="Crear Hito" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

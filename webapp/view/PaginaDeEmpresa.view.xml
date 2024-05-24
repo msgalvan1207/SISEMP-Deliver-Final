@@ -1,0 +1,139 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.entregaSisemp.controller.PaginaDeEmpresa" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="" objectSubtitle="" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="false">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="{Nombre}"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Salir" iconFirst="false" type="Back" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent>
+            <Image src="{Logo}" height="auto" width="100px" visible="true" densityAware="false" class="sapUiSmallMargin"/>
+        </uxap:headerContent>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Campañas">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Campañas">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" itemPress="_onFioriObjectPageTableItemPress" items="{path:'Campanias', templateShareable:true}">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button text="" icon="sap-icon://add" iconFirst="false" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Campaña" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Estado campaña"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                        <cells>
+                                            <ObjectStatus text="{Nombre}"/>
+                                            <core:Icon src="{iconState}" size="48px" height="48px" width="48px" visible="{Estado}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Crear campaña">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Crear campaña">
+                        <uxap:blocks>
+                            <Button text="Crear campaña" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Mensajes directos">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Mensajes directos">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="None" itemPress="_onFioriObjectPageTableItemPress1" items="{path:'StakeHolders', templateShareable:true}">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="100px" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text=""/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="" width="auto"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                        <cells>
+                                            <core:Icon src="sap-icon://customer" size="48px" height="48px" width="48px" visible="true"/>
+                                            <ObjectStatus text="{Nombre}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

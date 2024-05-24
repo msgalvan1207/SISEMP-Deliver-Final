@@ -1,0 +1,87 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.entregaSisemp.controller.Principal" xmlns:f="sap.f" xmlns:variants="sap.ui.comp.variants" xmlns="sap.m" xmlns:filterbar="sap.ui.comp.filterbar">
+    <f:DynamicPage headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <variants:VariantManagement/>
+                </f:heading>
+                <f:actions>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://action" type="Transparent"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <f:content>
+                    <filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true">
+                        <filterbar:filterItems/>
+                    </filterbar:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <VBox fitContainer="true">
+                <items>
+                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="None" itemPress="_onFioriListReportTableItemPress" updateFinished="_onFioriListReportTableUpdateFinished" items="{path:'/EmpresaSet', templateShareable:true}">
+                        <headerToolbar>
+                            <OverflowToolbar design="Transparent">
+                                <content>
+                                    <Title textAlign="Begin" text="Empresas"/>
+                                    <Title text="(1)"/>
+                                    <ToolbarSpacer/>
+                                    <Button icon="sap-icon://action-settings" type="Transparent">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                </content>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column width="200px" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Logo"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                <header>
+                                    <Text text="Nombre" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Categoria" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Activa" width="auto"/>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Navigation">
+                                <cells>
+                                    <Image src="{Logo}" height="auto" width="90px" visible="true" densityAware="false"/>
+                                    <ObjectStatus text="{Nombre}" width="auto"/>
+                                    <ObjectStatus text="{Categoria}" width="auto"/>
+                                    <ObjectStatus text="{Activa}" width="auto" state="{path:'ActiveState', formatter:'.formatStateFromCriticality'}" icon="{path:'ActiveState', formatter:'.formatIconFromCriticality'}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </items>
+            </VBox>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,52 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.entregaSisemp.controller.MensajeDirecto" xmlns:uxap="sap.uxap" xmlns="sap.m">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="" objectSubtitle="" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="{Nombre}"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions/>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Chat directo">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Chat directo">
+                        <uxap:blocks>
+                            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                <items>
+                                    <List width="100%" growing="false" growingThreshold="20" growingScrollToLoad="false" backgroundDesign="Solid" items="{path:'MensajesDirectos', templateShareable:true, parameters:{expand:'Sender'}}">
+                                        <items>
+                                            <FeedListItem icon="" sender="{Sender/Nombre}" text="{Content}" info="" timestamp="{path: 'Fecha', type: 'sap.ui.model.type.DateTime', formatOptions: { UTC: true, style: 'short' }}"/>
+                                        </items>
+                                    </List>
+                                    <FeedInput showIcon="true" placeholder="Post something here" enabled="true" visible="true" maxLength="0" buttonTooltip="Submit"/>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

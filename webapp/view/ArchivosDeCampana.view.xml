@@ -1,0 +1,107 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.entregaSisemp.controller.ArchivosDeCampana" xmlns:uxap="sap.uxap" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{Nombre}" objectSubtitle="Archivos" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="{Empresa/Nombre}"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Salir" iconFirst="true" type="Back" enabled="true" press="_onFioriObjectPageActionButtonPress">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Archivos">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Archivos">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" items="{path:'Archivos', templateShareable:true}">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button text="Eliminar" iconFirst="false" type="Transparent" press="_onFioriObjectPageTableActionPress">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Nombre archivo"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Autor contenido"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Fecha creación"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Center" vAlign="Middle" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true" minScreenWidth="Tablet">
+                                        <header>
+                                            <Text text="Descargar"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <Text text="{Nombre}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{AutorContenido}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Text text="{path: 'FechaCreacion', type: 'sap.ui.model.type.Date', formatOptions: { UTC: true, style: 'short' }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <core:Icon src="sap-icon://download" size="30px" height="48px" width="48px" visible="true" class="sapUiSmallMargin" press="_onIconPress"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Crear archivo">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Crear archivo">
+                        <uxap:blocks>
+                            <Button text="Subir archivo" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>
